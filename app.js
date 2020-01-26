@@ -6,8 +6,9 @@ const path = require('path');
 // const Thing = require('./models/thing');
 
 const stuffRoutes = require('./routes/stuff');
-const cardRoutes = require('./routes/card');
 const userRoutes = require('./routes/user');
+const cardRoutes = require('./routes/card');
+const measureRoutes = require('./routes/measure');
 
 mongoose.connect('mongodb+srv://william:mongowilpw@mycluster-xkfok.mongodb.net/test?retryWrites=true&w=majority',
     {
@@ -33,5 +34,6 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/api/auth', userRoutes);
 app.use('/api/stuff', stuffRoutes);
 app.use('/api/me/card', cardRoutes);
+app.use('/api/me/measure', measureRoutes);
 
 module.exports = app;
