@@ -18,7 +18,7 @@ exports.createMeasure = (req, res, next) => {
         humidity: measureObject.humidity,
         luminosity: measureObject.luminosity,
         movement: measureObject.movement,
-        cardId: req.params.cardId
+        cardId: measureObject.cardId
     });
     measure.save()
         .then(() => res.status(201).json({ message: 'Mesure enregistré !' }))

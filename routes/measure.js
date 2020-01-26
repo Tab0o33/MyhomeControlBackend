@@ -5,6 +5,6 @@ const auth = require('../middleware/auth');
 
 const measureCtrl = require('../controllers/measure');
 
-router.post('/card/:cardId', auth, measureCtrl.createMeasure);
+router.post('/', auth, measureCtrl.createMeasure);
 
 module.exports = router;
